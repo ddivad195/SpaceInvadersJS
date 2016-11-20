@@ -1,0 +1,28 @@
+#title-bar-btns {
+ -webkit-app-region: no-drag;
+ position: fixed;
+ top: 0px;
+ right: 0px;
+}
+#title-bar {
+  height: 15px;
+  padding: none;
+  margin: -12px;
+}
+#game-canvas {
+    margin-left: -8px;
+    margin-top: 1px;
+}
+.top-btn {
+  cursor: pointer;
+  border: none;
+  /*Make backround transparent - kind of a hack, but works well*/
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  font-size: 1.5em;
+}
+html {
+    overflow: hidden;
+    /*Make whole window draggable, as I have the window frame disabled*/
+    -webkit-app-region: drag;
+}

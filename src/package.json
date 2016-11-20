@@ -1,0 +1,11 @@
+{
+  "name": "Space Invaders",
+  "productName": "Space Invaders",
+  "description": "JavaScript remake of the classic game Space Invaders",
+  "version": "1.0.0",
+  "author": "David Daly",
+  "main": "window.js",
+  "dependencies": {
+    "fs-jetpack": "^0.9.0"
+  }
+}

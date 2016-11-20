@@ -1,0 +1,79 @@
+<html>
+
+    <head>
+        <title>Space Invaders</title>
+        <link rel="stylesheet" href="styles.css"></link>
+        <!-- add javascript sources-->
+        <script src="game.js"></script>
+        <script src="gameStates/initialState.js"></script>
+        <script src="gameStates/playstate.js"></script>
+        <script src="gameStates/pauseState.js"></script>
+        <script src="gameStates/deadState.js"></script>
+        <script src="gameStates/waveTransitionState.js"></script>
+        <script src="ImageLoader.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+        <div id="title-bar">
+            <div id="title-bar-btns">
+                <button class="top-btn" id="min-btn">-</button>
+                <button class="top-btn" id="close-btn">x</button>
+            </div>
+      </div>
+
+      <canvas id="game-canvas" width="800" height="600"></canvas>
+
+        <script>
+        // Options that control various aspects of the game and images I use in each of the game states.
+        // These can be changed to change how various parts of the game perform
+        var constants = {
+            maxInvaders: 56,
+            lives: 3,
+            startingInvaderRows: 2,
+            invaderColumns: 8,
+            waveDifficultyMultiplier: 0.3,
+            images: {
+                menu: [
+                    "res/menuBG.jpg",
+                    "res/deadBG.jpg"
+                ],
+                backgrounds: [
+                    "res/space1.jpg",
+                    "res/space2.jpg",
+                    "res/space3.jpg",
+                    "res/space4.jpg",
+                ],
+                invaders: [
+                    "res/invaders/invader1.png",
+                    "res/invaders/invader2.png",
+                    "res/invaders/invader3.png",
+                    "res/invaders/invader4.png",
+                    "res/invaders/invader5.png",
+                    "res/invaders/invader6.png",
+                ],
+                player: [
+                    "res/player_ship.png"
+                ]
+            }
+        };
+
+        var game = new Game(constants);
+        game.start();
+
+        //  Listen for keyboard events.
+        window.addEventListener("keydown", function keydown(e) {
+            var keycode = e.which || window.event.keycode;
+            //  Supress further processing of left/right/space (37/29/32)
+            if(keycode == 37 || keycode == 39 || keycode == 32) {
+                e.preventDefault();
+            }
+            game.keyDown(keycode);
+        });
+        window.addEventListener("keyup", function keydown(e) {
+            var keycode = e.which || window.event.keycode;
+            game.keyUp(keycode);
+        });
+        </script>
+    </body>
+</html>
