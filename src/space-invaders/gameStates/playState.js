@@ -54,9 +54,9 @@ PlayState.prototype.enter = function(game) {
     }
     //Make player and barriers
     this.player = new Player(game.width / 2 - 30, game.height - 65);
-    this.makeBarrier(150, 400);
+    this.makeBarrier(200, 400);
     this.makeBarrier((game.width / 2),400);
-    this.makeBarrier(650,400);
+    this.makeBarrier(game.width - 200,400);
 };
 
 PlayState.prototype.update = function(game, delta) {
@@ -85,8 +85,9 @@ PlayState.prototype.update = function(game, delta) {
     reverse = false;
 
     //Create invader bullets
+    canFire = this.invaders;
     for(var i=0; i<canFire.length; i++) {
-        var chance = 0.1 * delta + this.wave * delta * delta;
+        var chance = 0.025 * delta + this.wave * delta * delta;
         if(chance > Math.random()) {
             var bomb = new Bullet(canFire[i].x + canFire[i].width / 2, canFire[i].y);
             bomb.dx = 250;
@@ -171,7 +172,7 @@ PlayState.prototype.draw = function(game, delta, context) {
     this.bulletsFired.forEach(function (bullet) {
         context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
     });
-    context.fillStyle = '#f77770';
+    context.fillStyle = '#ff0000';
     this.invaderBullets.forEach(function(bomb) {
         context.fillRect(bomb.x, bomb.y, bomb.width, bomb.height);
     })

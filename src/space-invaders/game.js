@@ -22,11 +22,12 @@ function Game(constants) {
 
 //Changes game state and removes the previous state from the states array
 Game.prototype.changeState = function(state) {
+    //check it current state has a leave function, or if it is undefined
     if(this.getCurrentState() && this.getCurrentState().leave) {
         this.getCurrentState().leave(game);
         this.states.pop();
     }
-
+    // check if state.enter exists or is undefined
     if(state.enter) {
         state.enter(game);
     }
@@ -38,6 +39,7 @@ Game.prototype.changeState = function(state) {
 //Adds a new state to the game states array without removing the previous one.
 //Used in certain situations where the previous one should not get removed, eg: pause and play state combo
 Game.prototype.addState = function(state) {
+    // check if state.enter exists or is undefined
     if(state.enter) {
         state.enter(game);
     }
@@ -48,6 +50,7 @@ Game.prototype.addState = function(state) {
 //Used in certain situations where the previous one should not get removed, eg: pause and play state combo
 Game.prototype.removeState = function(state){
     if(this.getCurrentState()) {
+        //check it current state has a leave function, or if it is undefined
         if(this.getCurrentState().leave) {
             this.getCurrentState().leave(game);
         }
@@ -100,7 +103,7 @@ Game.prototype.drawHUD = function(wave, lives, score) {
     var context = this.canvas.getContext("2d");
     context.fillStyle = "#ffffff";
     context.font="15px Lucida Console";
-    if(score) context.fillText("Score: " + this.score, 690,game.height - 10);
+    if(score) context.fillText("Score: " + this.score, game.width-100,game.height - 10);
     if(wave) context.fillText("Wave: " + this.wave, 15, game.height - 10);
     if(lives) context.fillText("Lives: " + this.lives, game.width/2 - context.measureText("Lives: ").width/2, game.height - 10);
 }
@@ -123,13 +126,16 @@ Game.prototype.drawText = function(text, color, y,size) {
 function GameLoop(game) {
     var currentState = game.getCurrentState();
 
+    //make sure currentState is defined
     if(currentState) {
         var delta = 1 / 60;
         var context = game.canvas.getContext("2d");
 
+        //make sure currentState.update is defined
         if(currentState.update) {
             currentState.update(game, delta);
         }
+        //make sure currentState.draw is defined
         if(currentState.draw) {
             currentState.draw(game, delta, context);
         }
