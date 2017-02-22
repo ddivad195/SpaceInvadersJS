@@ -2,7 +2,7 @@
 
 ![screenshot](/screenshots/main_menu_electron.PNG)
 
-A JavaScript remake of the popular classic 'Space Invaders'. Uses HTML5 canvas for rendering and runs as a desktop application using the Electron framework. Made as an assignment while studying Graphics & Image Processing at college. 
+A JavaScript remake of the popular classic 'Space Invaders'. Uses HTML5 canvas for rendering and runs as a desktop application using the Electron framework.
 
 
 #Usage:
