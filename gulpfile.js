@@ -1,3 +1,3 @@
 'use strict';
 
-require('./tasks/start');
+require('./src/tasks/start');
