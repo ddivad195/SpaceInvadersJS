@@ -2,17 +2,16 @@
 
     <head>
         <title>Space Invaders</title>
-        <link rel="stylesheet" href="chrome.styles.css"></link>
+        <link rel="stylesheet" href="style.css"></link>
         <!-- add javascript sources-->
-        <script src="game.js"></script>
-        <script src="gameStates/initialState.js"></script>
-        <script src="gameStates/playState.js"></script>
-        <script src="gameStates/pauseState.js"></script>
-        <script src="gameStates/deadState.js"></script>
-        <script src="gameStates/waveTransitionState.js"></script>
-        <script src="gameStates/infoState.js"></script>
-        <script src="imageLoader.js"></script>
-        <script src="app.js"></script>
+        <script src="src/space-invaders/game.js"></script>
+        <script src="src/space-invaders/gameStates/initialState.js"></script>
+        <script src="src/space-invaders/gameStates/playState.js"></script>
+        <script src="src/space-invaders/gameStates/pauseState.js"></script>
+        <script src="src/space-invaders/gameStates/deadState.js"></script>
+        <script src="src/space-invaders/gameStates/waveTransitionState.js"></script>
+        <script src="src/space-invaders/gameStates/infoState.js"></script>
+        <script src="src/space-invaders/imageLoader.js"></script>
     </head>
 
     <body>
@@ -30,25 +29,25 @@
             waveDifficultyMultiplier: 0.3,
             images: {
                 menu: [
-                    "res/menuBG.jpg",
-                    "res/deadBG.jpg"
+                    "src/space-invaders/res/menuBG.jpg",
+                    "src/space-invaders/res/deadBG.jpg"
                 ],
                 backgrounds: [
-                    "res/space1.jpg",
-                    "res/space2.jpg",
-                    "res/space3.jpg",
-                    "res/space4.jpg",
+                    "src/space-invaders/res/space1.jpg",
+                    "src/space-invaders/res/space2.jpg",
+                    "src/space-invaders/res/space3.jpg",
+                    "src/space-invaders/res/space4.jpg",
                 ],
                 invaders: [
-                    "res/invaders/invader1.png",
-                    "res/invaders/invader2.png",
-                    "res/invaders/invader3.png",
-                    "res/invaders/invader4.png",
-                    "res/invaders/invader5.png",
-                    "res/invaders/invader6.png",
+                    "src/space-invaders/res/invaders/invader1.png",
+                    "src/space-invaders/res/invaders/invader2.png",
+                    "src/space-invaders/res/invaders/invader3.png",
+                    "src/space-invaders/res/invaders/invader4.png",
+                    "src/space-invaders/res/invaders/invader5.png",
+                    "src/space-invaders/res/invaders/invader6.png",
                 ],
                 player: [
-                    "res/player_ship.png"
+                    "src/space-invaders/res/player_ship.png"
                 ]
             }
         };

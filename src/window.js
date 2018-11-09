@@ -19,7 +19,7 @@ app.on('ready', function () {
     mainWindow.loadURL('file://' + __dirname + '/space-invaders/electron.index.html');
 
     // Open devTools in a separate window
-    // mainWindow.openDevTools({detach:true});
+    mainWindow.openDevTools({detach:true});
 });
 
 // Exit app when the window is closed
