@@ -1,4 +1,4 @@
-#Space invaders
+# Space invaders
 
 https://ddivad195.github.io/SpaceInvadersJS/
 
