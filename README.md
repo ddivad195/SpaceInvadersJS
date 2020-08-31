@@ -1,5 +1,7 @@
 #Space invaders
 
+https://ddivad195.github.io/SpaceInvadersJS/
+
 ![screenshot](/screenshots/main_menu_electron.PNG)
 
 A JavaScript remake of the popular classic 'Space Invaders'. Uses HTML5 canvas for rendering and runs as a desktop application using the Electron framework.
